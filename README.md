@@ -1,4 +1,4 @@
-# GIPHY API BY RICK
+# GIPHY FRONT END BY RICK
 
 ## Project setup
 ```
