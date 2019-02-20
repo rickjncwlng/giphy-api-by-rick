@@ -1,4 +1,4 @@
-# giphy-api
+# GIPHY API BY RICK
 
 ## Project setup
 ```
