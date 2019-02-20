@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header></app-header>
+    <div class="container py-8 mx-auto">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import './assets/css/app.css'
+import AppHeader from './components/AppHeader'
 
 export default {
-  name: 'app',
+  name: 'app',  
+  
   components: {
-    HelloWorld
+    'app-header': AppHeader
+  },
+
+  data() {
+    return {
+      search: '',
+    }
+  },
+
+  methods: {
+    submitSearch() {
+      this.$router.push(
+        {
+          name: 'search-result',
+          query: {
+            q: this.search
+          }
+        }
+      );
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
